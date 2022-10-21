@@ -58,7 +58,6 @@ public class Menu {
                                 if (supermercado.carritoAlimentos.get(i).getCodigoDeBarras() == codigoDeBarras && supermercado.carritoAlimentos.get(i).getPrecio()==precio) {
                                     supermercado.carritoAlimentos.get(i).setPrecio(precio - precio * (1 / (supermercado.carritoAlimentos.get(i).getDiasParaCaducar() + 1) + (precio * 0.1f)));
                                     supermercado.carrito.add(supermercado.carritoAlimentos.get(i));
-                                    System.out.println(supermercado.carritoAlimentos);
                                     break;
                                 }
                             }
