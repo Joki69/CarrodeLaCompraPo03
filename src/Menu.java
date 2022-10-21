@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -54,10 +55,10 @@ public class Menu {
                             scanner.nextLine();
                             supermercado.carritoAlimentos.add(new ProductoAlimentacion(precio, nombre, codigoDeBarras, anio, mes, dia));
                             for (int i = 0; i < supermercado.carritoAlimentos.size(); i++) {
-                                if (supermercado.carritoAlimentos.get(i).getCodigoDeBarras() == codigoDeBarras) {
+                                if (supermercado.carritoAlimentos.get(i).getCodigoDeBarras() == codigoDeBarras && supermercado.carritoAlimentos.get(i).getPrecio()==precio) {
                                     supermercado.carritoAlimentos.get(i).setPrecio(precio - precio * (1 / (supermercado.carritoAlimentos.get(i).getDiasParaCaducar() + 1) + (precio * 0.1f)));
                                     supermercado.carrito.add(supermercado.carritoAlimentos.get(i));
-                                    System.out.println(supermercado.carritoAlimentos.get(i).getPrecio());
+                                    System.out.println(supermercado.carritoAlimentos);
                                     break;
                                 }
                             }
