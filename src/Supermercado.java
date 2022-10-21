@@ -103,6 +103,10 @@ public class Supermercado {
             //Por el contrario entendemos que hay mas de una unidad y con el contador se comprueba si el siguiente valor de la lista es igual y le suma un punto al contador en el momento que cambie
             //sabremos que el siguiente producto es diferente asi que lo podemos printear y pasar al siguiente
             else {
+                if(i == 99){
+                    System.out.println("Producto=" + carrito.get(i).getNombre() + " | Unidades= " + contadorDeunidades +" | Precio x Unidad=" + carrito.get(i).getPrecio()+ "€ | Precio Total " + (carrito.get(i).getPrecio()*contadorDeunidades) + "€");
+                    break;
+                }
                 if(carrito.get(i).getCodigoDeBarras()!=carrito.get(i+1).getCodigoDeBarras()){
                     System.out.println("Producto=" + carrito.get(i).getNombre() + " | Unidades= " + contadorDeunidades +" | Precio x Unidad=" + carrito.get(i).getPrecio()+ "€ | Precio Total " + (carrito.get(i).getPrecio()*contadorDeunidades) + "€");
                 }

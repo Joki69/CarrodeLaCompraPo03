@@ -9,13 +9,13 @@ public class Menu {
 
     public void menuDeCompras() {
         // Prueba para llenar el carro y comprobar si te deja añadir mas de 100
-      /*  for (int i = 0; i < 100; i++) {
-            supermercado.carritoAlimentos.add(new ProductoAlimentacion(2, "Canelones", 1232131123, 2022, 10, 1));
+        /*for (int i = 0; i < 100; i++) {
+            supermercado.carritoAlimentos.add(new ProductoAlimentacion(2, "Canelones", 1232131123, 2022, 10, 25));
         }
         supermercado.carrito.addAll(supermercado.carritoAlimentos);
 
         System.out.println(supermercado.carrito + " " + supermercado.carrito.size());
-       */
+*/
         while (true) {
             System.out.println("Elige una opción: \n" +
                     "1. Añadir un producto a tu carrito. \n" +
@@ -41,7 +41,7 @@ public class Menu {
                        //Añadir alimentos
                         if (productoEleccion == 1) {
                             System.out.println("Introduce: Precio, nombre, codigo de barras, fecha de caducidad formato (AÑO MES DIA ) todo separado por \"Enters\"");
-                            int precio = scanner.nextInt();
+                            float precio = scanner.nextInt();
                             scanner.nextLine();
                             String nombre = scanner.nextLine();
                             int codigoDeBarras = scanner.nextInt();
@@ -57,13 +57,14 @@ public class Menu {
                                 if (supermercado.carritoAlimentos.get(i).getCodigoDeBarras() == codigoDeBarras) {
                                     supermercado.carritoAlimentos.get(i).setPrecio(precio - precio * (1 / (supermercado.carritoAlimentos.get(i).getDiasParaCaducar() + 1) + (precio * 0.1f)));
                                     supermercado.carrito.add(supermercado.carritoAlimentos.get(i));
+                                    System.out.println(supermercado.carritoAlimentos.get(i).getPrecio());
                                     break;
                                 }
                             }
                         } //Añadir Textil
                         else if (productoEleccion == 2) {
                             System.out.println("Introduce: Precio, nombre, codigo de barras, tipo de producto textil , todo separado por \"Enters\"");
-                            int precio = scanner.nextInt();
+                            float precio = scanner.nextInt();
                             scanner.nextLine();
                             String nombre = scanner.nextLine();
                             int codigoDeBarras = scanner.nextInt();
@@ -79,7 +80,7 @@ public class Menu {
                         } //Añadir Informatica
                         else if (productoEleccion == 3) {
                             System.out.println("Introduce: Precio, nombre, codigo de barras, Años de garantia, todo separado por \"Enters\"");
-                            int precio = scanner.nextInt();
+                            float precio = scanner.nextInt();
                             scanner.nextLine();
                             String nombre = scanner.nextLine();
                             int codigoDeBarras = scanner.nextInt();
